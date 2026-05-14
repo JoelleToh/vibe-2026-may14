@@ -1,1 +1,81 @@
-/* Add styles here */
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --container-bg: #fff;
+  --number-border: #ccc;
+  --button-bg: #007bff;
+  --button-hover: #0056b3;
+  --button-text: #fff;
+  --transition-speed: 0.3s;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --container-bg: #1e1e1e;
+  --number-border: #444;
+  --button-bg: #bb86fc;
+  --button-hover: #9965f4;
+  --button-text: #000;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  margin: 0;
+}
+
+h1 {
+  color: var(--text-color);
+  transition: color var(--transition-speed);
+}
+
+#toto-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.toto-number {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--number-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: var(--container-bg);
+  transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#generate-button, #theme-toggle {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+#generate-button:hover, #theme-toggle:hover {
+  background-color: var(--button-hover);
+}
